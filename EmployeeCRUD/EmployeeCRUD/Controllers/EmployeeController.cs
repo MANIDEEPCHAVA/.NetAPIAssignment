@@ -18,7 +18,7 @@ namespace EmployeeCRUD.Controllers
             employeeService = employeeservice;
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<List<Employee>> Get()
         {
             return await employeeService.GetAllEmployees();
@@ -36,7 +36,7 @@ namespace EmployeeCRUD.Controllers
             return await employeeService.GetEmployeeById(id);
         }
 
-        [HttpPut]
+        [HttpPut("update")]
         public async Task<Employee> UpdateEmployee(Employee employee)
         {
             return await employeeService.UpdateEmployee(employee);
